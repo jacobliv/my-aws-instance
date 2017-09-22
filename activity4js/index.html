@@ -1,0 +1,33 @@
+
+<html>
+<head>
+	<title>JavaScript activity</title>
+	<script>
+var cities = ["Salt Lake City", "West Valley City", "Provo", "West Jordan", "Orem", "Sandy", "Ogden", "St. George", "Layton", "Taylor"];
+var mfunc = function() {
+  var part = document.getElementById("partial").value;
+  var suggestions = document.getElementById("suggestions");
+  var inner = "<ul>";
+  console.log("part = "+part);
+  for(i = 0; i < cities.length; i++) {
+    if(cities[i].startsWith(part)) {
+      inner += "<li>"+cities[i]+"</li>";
+    }
+  } 
+  inner+="</ul>";
+  suggestions.innerHTML = inner;
+};
+
+</script>
+</head>
+<body>
+    
+    <h1>Cities </h1>
+	<p>Enter City: <input type="text" id="partial" onkeyup="mfunc()"></p>
+
+    <div id="suggestions">Suggested Cities: </div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+body{
+background-color: #99ddff; 
+padding: 10px 15px 10px 15px;
+}
+
+#content-top{
+margin: 5px 5px 5px 5px;
+padding: 10px 10px 10px 10px;
+background-color: #ea2e49;
+width: 15%;
+color: white;
+text-align: center;
+}
+
+#header{
+font-size: 4em;
+font-family: "Comic Sans MS", cursive, sans-serif;
+color: white;
+text-align: center;
+}
+
+.slide-show{
+width: 30%;
+border-color: black;
+text-align: center;
+}
+
+#slideShow{
+text-align: center;
+}
+
+#content-introduction{
+font-color: white;
+float: left;
+margin 10px 10px 10px 10px;
+width: 60%;
+font-family: "Tablet-gothic-condensed", cursive, sans-serif;
+
+}
+
+#separator-line{
+border-color: red;
+width: 140px;
+}
+
+#content-links{
+background-color: rgba(246, 247, 146, 0.9);
+float: right;
+margin: 10px 10px 10px 10px;
+padding: 10px 10px 10px 10px;
+width: 20%;
+font-family: "Table-gothic-condensed", cursive, sans-serif;
+}
+
+#social-media{
+clear: both;
+text-align: center;
+}
+
+.fa{
+padding: 20px;
+font-size: 80px;
+width: 30px;
+text-align: center;
+text-decoration: none;
+border-radius: 50%;
+}
+
+.fa:hover{
+opacity: 0.7;
+}
+
+.fa-facebook{
+background: #3b5998;
+color: white;
+}
+
+.fa-twitter{
+background: #55acee;
+color: white;
+}
+
+#content-footer{
+clear: both;
+color: white;
+text-align: center;
+background-color: gray;
+padding: 5px;
+font-size: auto;
+}
