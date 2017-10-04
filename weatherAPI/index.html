@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>City Finder</title>
+<script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous">
+</script>
+<script>
+  $(document).ready(function() {
+    $( "#cityField" ).keyup(function() {
+      var url = "http://bioresearch.byu.edu/cs260/jquery/getcity.cgi?q="+$("#cityField").val();
+    //$.getJSON(url,function(data);
+    $.getJSON(url,function(data) {
+      var everything;
+      everything = "<ul>";
+      $.each(data, function(i,item) {
+        everything += "<li> "+data[i].city + "</li>";
+      });
+    everything += "</ul>";
+    $("#txtHint").html(everything);
+    });
+  });
+
+//Makeing the Submit button to work
+$("#weatherButton").click(function(e){
+  var value = $("#cityField").val();
+  console.log(value);
+  e.preventDefault();
+  $("#displayCity").text(value);
+
+//Connecting to WeatherUnderground
+var myurl= "https://api.wunderground.com/api/de9d33cdfed6ea4e/geolookup/conditions/q/UT/";
+  myurl += value;
+  myurl += ".json";
+  console.log(myurl);
+  $.ajax({
+    url : myurl,
+    dataType : "json",
+    success : function(parsed_json) {
+      var location = parsed_json['location']['city'];
+      var temp_string = parsed_json['current_observation']['temperature_string'];
+      var current_weather = parsed_json['current_observation']['weather'];
+      everything = "<ul>";
+      everything += "<li>Location: "+location;
+      everything += "<li>Temperature: "+temp_string;
+      everything += "<li>Weather: "+current_weather;
+      everything += "</ul>";
+      $("#weather").html(everything);
+			var.searchStackOverflow = function(e){
+			e.preventDefault()
+			
+			var searchText = $("searchStack".val()console.log(searchText);
+			}
+    }
+  });
+
+});
+});
+</script>
+</head>
+<body>
+<form>
+Enter A Utah City: <input type="text" id="cityField" value=""><br>
+Suggestion: <span id="txtHint">Empty</span>
+<input id="weatherButton" type="submit" value="Submit">
+		<input id="searchStack" type="text"/>
+		<button id="searchButton">Search</button>
+</form>
+<p>City</p>
+<textarea id="displayCity">No City</textarea>
+<p>Current Weather</p>
+<div id="weather">No weather</div>
+
+</body>
+</html>
